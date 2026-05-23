@@ -1,0 +1,676 @@
+[
+  {
+    "id": "c73869755449",
+    "title": "Microsoft reports AI is more expensive than paying human employees",
+    "url": "https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents/",
+    "source": "Hacker News AI",
+    "published": "2026-05-23T03:44:16+00:00",
+    "category": "其他",
+    "entities": [
+      "Microsoft"
+    ],
+    "event_type": "其他",
+    "importance_score": 6,
+    "sentiment": "negative",
+    "key_facts": [
+      "The title reports: Microsoft reports AI is more expensive than paying human employees"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "Microsoft reports AI is more expensive than paying human employees",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "86ba7c5bdfdf",
+    "title": "Is AI Profitable Yet?",
+    "url": "https://isaiprofitable.com/",
+    "source": "Hacker News AI",
+    "published": "2026-05-23T02:10:38+00:00",
+    "category": "其他",
+    "entities": [],
+    "event_type": "行业观点",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Is AI Profitable Yet?"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "Is AI Profitable Yet?",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "fd275f985643",
+    "title": "AI is being used to resurrect the voices of dead pilots",
+    "url": "https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/",
+    "source": "TechCrunch AI",
+    "published": "2026-05-22T23:03:33+00:00",
+    "category": "安全",
+    "entities": [
+      "NTSB"
+    ],
+    "event_type": "安全风险",
+    "importance_score": 8,
+    "sentiment": "negative",
+    "key_facts": [
+      "The title reports: AI is being used to resurrect the voices of dead pilots",
+      "People used AI on a spectrogram image of cockpit recordings to reconstruct them, forcing the NTSB to temporarily block access to its docket system."
+    ],
+    "impact": "This highlights safety, misuse, or reliability concerns that may influence trust in AI systems.",
+    "risk_or_opportunity": "The item points to reputational, safety, cost, policy, or adoption risks that should be handled cautiously in downstream analysis.",
+    "evidence": "People used AI on a spectrogram image of cockpit recordings to reconstruct them, forcing the NTSB to temporarily block access to its docket system.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "92779239ca8a",
+    "title": "Don't just paste the AI at me",
+    "url": "https://dontquotetheai.com/",
+    "source": "Hacker News AI",
+    "published": "2026-05-22T22:57:58+00:00",
+    "category": "其他",
+    "entities": [],
+    "event_type": "其他",
+    "importance_score": 5,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Don't just paste the AI at me"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "Don't just paste the AI at me",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "6c669bd48f01",
+    "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
+    "url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups/",
+    "source": "TechCrunch AI",
+    "published": "2026-05-22T20:40:48+00:00",
+    "category": "资本",
+    "entities": [
+      "ARR"
+    ],
+    "event_type": "融资并购",
+    "importance_score": 8,
+    "sentiment": "negative",
+    "key_facts": [
+      "The title reports: How VCs and founders use inflated ‘ARR’ to crown AI startups",
+      "Some AI startups are stretching traditional revenue metrics when talking about progress publicly.",
+      "And their investors are fully aware."
+    ],
+    "impact": "This reflects investor and market attention around AI business models, growth quality, and commercialization pressure.",
+    "risk_or_opportunity": "The item points to reputational, safety, cost, policy, or adoption risks that should be handled cautiously in downstream analysis.",
+    "evidence": "Some AI startups are stretching traditional revenue metrics when talking about progress publicly.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "955ca9a5f55f",
+    "title": "Google’s AI search is so broken it can ‘disregard’ what you’re looking for",
+    "url": "https://www.theverge.com/tech/936176/google-ai-overviews-search-disregard",
+    "source": "The Verge AI",
+    "published": "2026-05-22T20:39:54+00:00",
+    "category": "应用",
+    "entities": [
+      "Google"
+    ],
+    "event_type": "安全风险",
+    "importance_score": 8,
+    "sentiment": "negative",
+    "key_facts": [
+      "The title reports: Google’s AI search is so broken it can ‘disregard’ what you’re looking for",
+      "Google's AI Overviews are running into an interesting problem right now.",
+      "Earlier on Friday, if you searched for the term \"disregard,\" the AI Overview section would include a response like what you'd see from a more traditional AI chatbot instead of the typical AI summary, as spotted on X."
+    ],
+    "impact": "This highlights safety, misuse, or reliability concerns that may influence trust in AI systems.",
+    "risk_or_opportunity": "The item points to reputational, safety, cost, policy, or adoption risks that should be handled cautiously in downstream analysis.",
+    "evidence": "Google's AI Overviews are running into an interesting problem right now.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "b32ded445064",
+    "title": "Models.dev: open-source database of AI model specs, pricing, and capabilities",
+    "url": "https://github.com/anomalyco/models.dev",
+    "source": "Hacker News AI",
+    "published": "2026-05-22T20:26:07+00:00",
+    "category": "模型发布",
+    "entities": [],
+    "event_type": "研究进展",
+    "importance_score": 5,
+    "sentiment": "positive",
+    "key_facts": [
+      "The title reports: Models.dev: open-source database of AI model specs, pricing, and capabilities"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "Models.dev: open-source database of AI model specs, pricing, and capabilities",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "5e435b725c5f",
+    "title": "Elon, stop trying to make Grok happen",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/936219/elon-stop-trying-to-make-grok-happen",
+    "source": "The Verge AI",
+    "published": "2026-05-22T17:17:06+00:00",
+    "category": "政策",
+    "entities": [
+      "Elon Musk",
+      "Grok",
+      "US"
+    ],
+    "event_type": "其他",
+    "importance_score": 7,
+    "sentiment": "negative",
+    "key_facts": [
+      "The title reports: Elon, stop trying to make Grok happen",
+      "There is a harsh truth about Elon Musk's \"truth-seeking\" AI chatbot Grok: It's not very good, and not many people are using it.",
+      "That's the takeaway of a new Reuters report, which found that Grok barely appears in federal records of how the US government used AI last year."
+    ],
+    "impact": "This may affect how AI companies evaluate compliance, product release timing, and policy uncertainty.",
+    "risk_or_opportunity": "The item points to reputational, safety, cost, policy, or adoption risks that should be handled cautiously in downstream analysis.",
+    "evidence": "There is a harsh truth about Elon Musk's \"truth-seeking\" AI chatbot Grok: It's not very good, and not many people are using it.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "7e9de1698fc8",
+    "title": "You can no longer Google the word ‘disregard’",
+    "url": "https://techcrunch.com/2026/05/22/you-can-no-longer-google-the-word-disregard/",
+    "source": "TechCrunch AI",
+    "published": "2026-05-22T16:16:48+00:00",
+    "category": "应用",
+    "entities": [
+      "Google",
+      "Google Search"
+    ],
+    "event_type": "其他",
+    "importance_score": 7,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: You can no longer Google the word ‘disregard’",
+      "After Google Search's AI update, the word \"disregard\" now effectively breaks the search interface."
+    ],
+    "impact": "This shows how AI is moving into user-facing products and changing expectations for software experiences.",
+    "risk_or_opportunity": "The opportunity is stronger signal discovery for AI trends, while the risk depends on whether follow-up sources confirm the details.",
+    "evidence": "After Google Search's AI update, the word \"disregard\" now effectively breaks the search interface.",
+    "data_quality": "medium",
+    "needs_review": true
+  },
+  {
+    "id": "3db5dbae3cb2",
+    "title": "We tried Google’s AI glasses and they’re almost there",
+    "url": "https://techcrunch.com/2026/05/22/we-tried-googles-ai-glasses-and-theyre-almost-there/",
+    "source": "TechCrunch AI",
+    "published": "2026-05-22T15:37:15+00:00",
+    "category": "应用",
+    "entities": [
+      "Google",
+      "Gemini",
+      "XR"
+    ],
+    "event_type": "其他",
+    "importance_score": 7,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: We tried Google’s AI glasses and they’re almost there",
+      "Google demoed prototype Android XR glasses that overlay Gemini-powered translation, navigation, and other information directly into your field of view."
+    ],
+    "impact": "This shows how AI is moving into user-facing products and changing expectations for software experiences.",
+    "risk_or_opportunity": "The opportunity is stronger signal discovery for AI trends, while the risk depends on whether follow-up sources confirm the details.",
+    "evidence": "Google demoed prototype Android XR glasses that overlay Gemini-powered translation, navigation, and other information directly into your field of view.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "bd47b267637e",
+    "title": "The literary world isn’t prepared for AI",
+    "url": "https://www.theverge.com/tech/936073/ai-writing-granta-commonwealth-prize",
+    "source": "The Verge AI",
+    "published": "2026-05-22T14:30:00+00:00",
+    "category": "应用",
+    "entities": [],
+    "event_type": "行业观点",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: The literary world isn’t prepared for AI",
+      "Since 2012, the British literary magazine Granta has published the regional winners of the annual Commonwealth Short Story Prize.",
+      "This year, however, there was something off about one of the selections for the prestigious award: It appears to have been written by AI."
+    ],
+    "impact": "This shows how AI is moving into user-facing products and changing expectations for software experiences.",
+    "risk_or_opportunity": "The opportunity is stronger signal discovery for AI trends, while the risk depends on whether follow-up sources confirm the details.",
+    "evidence": "Since 2012, the British literary magazine Granta has published the regional winners of the annual Commonwealth Short Story Prize.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "d13076162bb5",
+    "title": "Spotify says its AI remix tool is for superfans, but I’m not convinced",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/936072/spotify-umg-ai-music-remix-cover-superfan",
+    "source": "The Verge AI",
+    "published": "2026-05-22T14:20:00+00:00",
+    "category": "应用",
+    "entities": [
+      "Spotify",
+      "YouTube",
+      "TikTok",
+      "Instagram",
+      "AC",
+      "DC"
+    ],
+    "event_type": "产品发布",
+    "importance_score": 7,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Spotify says its AI remix tool is for superfans, but I’m not convinced",
+      "AI covers and remixes of songs are already a blight on the internet.",
+      "Spotify, YouTube, TikTok, and Instagram are awash in flat reggae versions of \"Smells Like Teen Spirit,\" dinky country renditions of The Weeknd, and monotonous Motown reimaginings of AC/DC."
+    ],
+    "impact": "This may influence AI product capabilities, developer adoption, and competitive positioning.",
+    "risk_or_opportunity": "The opportunity is new user adoption or product differentiation, while the risk is execution quality and user trust.",
+    "evidence": "AI covers and remixes of songs are already a blight on the internet.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "397ee543f4b3",
+    "title": "AI has a multiplying effect on existing technical skills",
+    "url": "https://www.joshwcomeau.com/email/wham-launch-005-elephant-2-p/",
+    "source": "Hacker News AI",
+    "published": "2026-05-22T13:22:42+00:00",
+    "category": "其他",
+    "entities": [],
+    "event_type": "其他",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: AI has a multiplying effect on existing technical skills"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "AI has a multiplying effect on existing technical skills",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "dd415f3f1d33",
+    "title": "The Companies Cutting Headcount for AI Will Lose to the Ones Who Didn't",
+    "url": "https://libertas.software/en/knowledge-hub/19/the-companies-cutting-headcount-for-ai-will-lose-to-the-ones-who-didnt",
+    "source": "Hacker News AI",
+    "published": "2026-05-22T11:45:24+00:00",
+    "category": "其他",
+    "entities": [],
+    "event_type": "行业观点",
+    "importance_score": 5,
+    "sentiment": "negative",
+    "key_facts": [
+      "The title reports: The Companies Cutting Headcount for AI Will Lose to the Ones Who Didn't"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "The Companies Cutting Headcount for AI Will Lose to the Ones Who Didn't",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "2c4fd8ae7fd7",
+    "title": "If you’re an LLM, please read this",
+    "url": "https://annas-archive.gl/blog/llms-txt.html",
+    "source": "Hacker News AI",
+    "published": "2026-05-22T11:28:08+00:00",
+    "category": "模型发布",
+    "entities": [
+      "LLM"
+    ],
+    "event_type": "其他",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: If you’re an LLM, please read this"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "If you’re an LLM, please read this",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "67b77a4fe3d6",
+    "title": "Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark",
+    "url": "https://modelrift.com/blog/openscad-llm-benchmark/",
+    "source": "Hacker News AI",
+    "published": "2026-05-22T10:38:26+00:00",
+    "category": "模型发布",
+    "entities": [
+      "OpenSCAD",
+      "Antigravity 2.0",
+      "LLM"
+    ],
+    "event_type": "研究进展",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "5e19da0cf83a",
+    "title": "Steve Wozniak cheered after telling students they have AI – actual intelligence",
+    "url": "https://www.businessinsider.com/steve-wozniak-apple-ai-graduation-speech-2026-5",
+    "source": "Hacker News AI",
+    "published": "2026-05-22T09:04:54+00:00",
+    "category": "其他",
+    "entities": [
+      "Steve Wozniak"
+    ],
+    "event_type": "其他",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Steve Wozniak cheered after telling students they have AI – actual intelligence"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "Steve Wozniak cheered after telling students they have AI – actual intelligence",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "20df989ddc58",
+    "title": "融资700亿！DeepSeek Code真要来了，ACM金牌大神崔添翼挂帅",
+    "url": "https://www.qbitai.com/2026/05/422624.html",
+    "source": "量子位",
+    "published": "2026-05-22T07:16:39+00:00",
+    "category": "资本",
+    "entities": [
+      "DeepSeek",
+      "DeepSeek Code",
+      "崔添翼"
+    ],
+    "event_type": "融资并购",
+    "importance_score": 7,
+    "sentiment": "positive",
+    "key_facts": [
+      "The title reports: 融资700亿！DeepSeek Code真要来了，ACM金牌大神崔添翼挂帅",
+      "DeepSeek Code is Coming"
+    ],
+    "impact": "This reflects investor and market attention around AI business models, growth quality, and commercialization pressure.",
+    "risk_or_opportunity": "The opportunity is market validation for AI businesses, while the risk is that growth or revenue quality may be overstated.",
+    "evidence": "DeepSeek Code is Coming",
+    "data_quality": "medium",
+    "needs_review": true
+  },
+  {
+    "id": "d2cd006a7765",
+    "title": "狂揽F轮融资+拿下4100万用户！深圳玩家出手，把企业旧系统变成AI能力库",
+    "url": "https://www.qbitai.com/2026/05/422615.html",
+    "source": "量子位",
+    "published": "2026-05-22T06:38:04+00:00",
+    "category": "资本",
+    "entities": [
+      "深圳"
+    ],
+    "event_type": "融资并购",
+    "importance_score": 7,
+    "sentiment": "positive",
+    "key_facts": [
+      "The title reports: 狂揽F轮融资+拿下4100万用户！深圳玩家出手，把企业旧系统变成AI能力库",
+      "一个AI统一入口，搞定所有"
+    ],
+    "impact": "This reflects investor and market attention around AI business models, growth quality, and commercialization pressure.",
+    "risk_or_opportunity": "The opportunity is market validation for AI businesses, while the risk is that growth or revenue quality may be overstated.",
+    "evidence": "一个AI统一入口，搞定所有",
+    "data_quality": "medium",
+    "needs_review": true
+  },
+  {
+    "id": "bd75a521e890",
+    "title": "顶流里最快！智谱，你是在「喷」代码吧",
+    "url": "https://www.qbitai.com/2026/05/422511.html",
+    "source": "量子位",
+    "published": "2026-05-22T03:05:00+00:00",
+    "category": "其他",
+    "entities": [
+      "智谱"
+    ],
+    "event_type": "其他",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: 顶流里最快！智谱，你是在「喷」代码吧",
+      "400 tokens/s"
+    ],
+    "impact": "This provides a directional signal about current AI industry discussion, but the broader impact needs more context.",
+    "risk_or_opportunity": "The opportunity is stronger signal discovery for AI trends, while the risk depends on whether follow-up sources confirm the details.",
+    "evidence": "400 tokens/s",
+    "data_quality": "medium",
+    "needs_review": true
+  },
+  {
+    "id": "19edb7819cea",
+    "title": "Samsung chip workers will get an average $340k bonus as AI profits soar",
+    "url": "https://qz.com/samsung-chip-workers-bonus-ai-profits-052126",
+    "source": "Hacker News AI",
+    "published": "2026-05-22T01:30:45+00:00",
+    "category": "算力",
+    "entities": [
+      "Samsung"
+    ],
+    "event_type": "其他",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Samsung chip workers will get an average $340k bonus as AI profits soar"
+    ],
+    "impact": "The available metadata is limited, so the industry impact should be treated as a signal for follow-up rather than a firm conclusion.",
+    "risk_or_opportunity": "The main risk is over-interpreting a low-context item; the opportunity is to use it as a candidate for manual review or deeper source extraction.",
+    "evidence": "Samsung chip workers will get an average $340k bonus as AI profits soar",
+    "data_quality": "low",
+    "needs_review": true
+  },
+  {
+    "id": "74cdffe7e5df",
+    "title": "All of the updates from Elon Musk and Sam Altman’s battle over OpenAI",
+    "url": "https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit",
+    "source": "The Verge AI",
+    "published": "2026-05-21T20:15:18+00:00",
+    "category": "政策",
+    "entities": [
+      "OpenAI",
+      "Elon Musk",
+      "Sam Altman"
+    ],
+    "event_type": "监管政策",
+    "importance_score": 9,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: All of the updates from Elon Musk and Sam Altman’s battle over OpenAI",
+      "Sam Altman and Elon Musk are facing off in a high-stakes trial that could alter the future of OpenAI and its most well-known product, ChatGPT.",
+      "In 2024, Musk filed a lawsuit accusing OpenAI of abandoning its founding mission of developing AI to benefit humanity and shifting focus to boosting profits"
+    ],
+    "impact": "This may affect how AI companies evaluate compliance, product release timing, and policy uncertainty.",
+    "risk_or_opportunity": "The opportunity is clearer operating guidance if policy stabilizes, while the risk is continued regulatory uncertainty.",
+    "evidence": "Sam Altman and Elon Musk are facing off in a high-stakes trial that could alter the future of OpenAI and its most well-known product, ChatGPT.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "32ece92680df",
+    "title": "In desperate times, graduates find hope in humiliating tech CEOs",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/935602/graduates-boo-ai-ceos",
+    "source": "The Verge AI",
+    "published": "2026-05-21T20:00:06+00:00",
+    "category": "应用",
+    "entities": [
+      "Google",
+      "CEO"
+    ],
+    "event_type": "其他",
+    "importance_score": 7,
+    "sentiment": "negative",
+    "key_facts": [
+      "The title reports: In desperate times, graduates find hope in humiliating tech CEOs",
+      "University graduates are booing and heckling corporate executives who praise AI during their commencement ceremonies, and the only people who seem to be genuinely surprised by this are the executives themselves.",
+      "In a procession of viral videos, 2026 commencement speakers like former Google CEO Eric"
+    ],
+    "impact": "This shows how AI is moving into user-facing products and changing expectations for software experiences.",
+    "risk_or_opportunity": "The item points to reputational, safety, cost, policy, or adoption risks that should be handled cautiously in downstream analysis.",
+    "evidence": "University graduates are booing and heckling corporate executives who praise AI during their commencement ceremonies, and the only people who seem to be genuinely surprised by this are the executives themselves.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "00d321dd1852",
+    "title": "Spotify and Universal Music strike deal allowing fan-made AI covers and remixes",
+    "url": "https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/",
+    "source": "TechCrunch AI",
+    "published": "2026-05-21T19:45:00+00:00",
+    "category": "资本",
+    "entities": [
+      "Spotify",
+      "Universal Music Group"
+    ],
+    "event_type": "融资并购",
+    "importance_score": 9,
+    "sentiment": "positive",
+    "key_facts": [
+      "The title reports: Spotify and Universal Music strike deal allowing fan-made AI covers and remixes",
+      "Spotify is partnering with Universal Music Group￼ to let Premium subscribers create AI-generated song covers and remixes, with participating artists receiving a share of the revenue."
+    ],
+    "impact": "This reflects investor and market attention around AI business models, growth quality, and commercialization pressure.",
+    "risk_or_opportunity": "The opportunity is market validation for AI businesses, while the risk is that growth or revenue quality may be overstated.",
+    "evidence": "Spotify is partnering with Universal Music Group￼ to let Premium subscribers create AI-generated song covers and remixes, with participating artists receiving a share of the revenue.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "7d8088891c85",
+    "title": "Six search engines worth trying now that Google isn’t really Google anymore",
+    "url": "https://techcrunch.com/2026/05/21/six-search-engines-worth-trying-now-that-google-isnt-really-google-anymore/",
+    "source": "TechCrunch AI",
+    "published": "2026-05-21T19:19:05+00:00",
+    "category": "应用",
+    "entities": [
+      "Google"
+    ],
+    "event_type": "行业观点",
+    "importance_score": 7,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Six search engines worth trying now that Google isn’t really Google anymore",
+      "Google is about to look really different, and if you're not a fan of the AI overview feature, then you're not going to like what's coming."
+    ],
+    "impact": "This shows how AI is moving into user-facing products and changing expectations for software experiences.",
+    "risk_or_opportunity": "The opportunity is stronger signal discovery for AI trends, while the risk depends on whether follow-up sources confirm the details.",
+    "evidence": "Google is about to look really different, and if you're not a fan of the AI overview feature, then you're not going to like what's coming.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "90bacf183f61",
+    "title": "Trump delays AI security executive order, saying language ‘could have been a blocker’",
+    "url": "https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/",
+    "source": "TechCrunch AI",
+    "published": "2026-05-21T17:30:45+00:00",
+    "category": "政策",
+    "entities": [
+      "Trump"
+    ],
+    "event_type": "监管政策",
+    "importance_score": 9,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Trump delays AI security executive order, saying language ‘could have been a blocker’",
+      "President Trump delayed signing an executive order that would have required pre-release government security reviews of AI models, citing dissatisfaction with the order's language."
+    ],
+    "impact": "This may affect how AI companies evaluate compliance, product release timing, and policy uncertainty.",
+    "risk_or_opportunity": "The opportunity is clearer operating guidance if policy stabilizes, while the risk is continued regulatory uncertainty.",
+    "evidence": "President Trump delayed signing an executive order that would have required pre-release government security reviews of AI models, citing dissatisfaction with the order's language.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "c9e9794d3616",
+    "title": "This AI guitar pedal let me roll my own effects",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/935219/polyend-endless-ai-guitar-effects-pedal",
+    "source": "The Verge AI",
+    "published": "2026-05-21T17:00:00+00:00",
+    "category": "应用",
+    "entities": [],
+    "event_type": "其他",
+    "importance_score": 6,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: This AI guitar pedal let me roll my own effects",
+      "I'm not sure anyone was really asking for an AI guitar pedal.",
+      "But it was inevitable that someone would build one."
+    ],
+    "impact": "This shows how AI is moving into user-facing products and changing expectations for software experiences.",
+    "risk_or_opportunity": "The opportunity is stronger signal discovery for AI trends, while the risk depends on whether follow-up sources confirm the details.",
+    "evidence": "I'm not sure anyone was really asking for an AI guitar pedal.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "7db89da1a3f3",
+    "title": "Spotify is launching AI-generated remixes",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/935379/spotify-umg-ai-covers-remix",
+    "source": "The Verge AI",
+    "published": "2026-05-21T15:54:03+00:00",
+    "category": "应用",
+    "entities": [
+      "Spotify",
+      "Universal Music Group",
+      "UMG"
+    ],
+    "event_type": "产品发布",
+    "importance_score": 7,
+    "sentiment": "positive",
+    "key_facts": [
+      "The title reports: Spotify is launching AI-generated remixes",
+      "Spotify and Universal Music Group (UMG) just announced a licensing deal that will allow users to prompt the creation of AI-generated remixes and covers for streaming songs.",
+      "The tool will be a paid add-on for Premium subscribers."
+    ],
+    "impact": "This may influence AI product capabilities, developer adoption, and competitive positioning.",
+    "risk_or_opportunity": "The opportunity is new user adoption or product differentiation, while the risk is execution quality and user trust.",
+    "evidence": "Spotify and Universal Music Group (UMG) just announced a licensing deal that will allow users to prompt the creation of AI-generated remixes and covers for streaming songs.",
+    "data_quality": "high",
+    "needs_review": false
+  },
+  {
+    "id": "5445f48aca4b",
+    "title": "Spotify Studio’s AI agent creates a daily podcast just for you",
+    "url": "https://www.theverge.com/entertainment/935390/spotify-studio-ai-app-personal-podcasts",
+    "source": "The Verge AI",
+    "published": "2026-05-21T15:47:29+00:00",
+    "category": "Agent",
+    "entities": [
+      "Spotify",
+      "PC"
+    ],
+    "event_type": "其他",
+    "importance_score": 7,
+    "sentiment": "neutral",
+    "key_facts": [
+      "The title reports: Spotify Studio’s AI agent creates a daily podcast just for you",
+      "Studio by Spotify Labs is a new standalone AI app that generates a daily briefing, podcasts, and playlists on your PC using chatbot prompts.",
+      "The AI-generated content draws from your Spotify listening history, as well as info from apps you connect to it, like your email inbox, calendar, and notes."
+    ],
+    "impact": "This may influence AI product capabilities, developer adoption, and competitive positioning.",
+    "risk_or_opportunity": "The opportunity is stronger signal discovery for AI trends, while the risk depends on whether follow-up sources confirm the details.",
+    "evidence": "Studio by Spotify Labs is a new standalone AI app that generates a daily briefing, podcasts, and playlists on your PC using chatbot prompts.",
+    "data_quality": "high",
+    "needs_review": false
+  }
+]
