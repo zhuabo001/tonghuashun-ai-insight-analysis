@@ -59,3 +59,23 @@ data/news.json
 ```
 
 脚本会打印每个 RSS 源的抓取数量、通过过滤数量，以及最终合并后的新闻总数。
+
+# 结构化新闻处理
+
+结构化处理脚本位于 `scripts/structure_news.py`，输入为 `data/news.json`，输出为 `data/structured_news.json`。
+
+```bash
+.venv/bin/python scripts/structure_news.py
+```
+
+结构化阶段固定按 `BATCH_SIZE = 1` 单条处理新闻，避免不同新闻之间的主体和事实互相混淆。输出的单条结构命名为 `StructuredNewsItem`，包含基础追溯字段、分类字段、舆情字段、事实依据字段，以及 `data_quality` 和 `needs_review` 两个质量控制字段。
+
+校验后的结果才会写入 `data/structured_news.json`。校验规则包括：
+
+- `category`、`event_type`、`sentiment`、`data_quality` 必须属于预设枚举。
+- `importance_score` 必须是 1-10 的整数。
+- `entities` 必须是数组。
+- `key_facts` 必须非空。
+- 缺失字段会补默认值，并将 `needs_review` 标记为 `true`。
+
+需要特别注意的是，Hacker News 的 `summary` 通常包含 Article URL、Comments URL、Points 和评论数等社区元数据，不能直接当作正文事实使用；量子位等短摘要新闻也会被保守标记为 `medium` 或 `low` 数据质量，并优先进入人工复核。
