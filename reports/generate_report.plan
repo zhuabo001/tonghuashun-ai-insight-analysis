@@ -1,0 +1,97 @@
+# 执行计划：AI 舆情分析日报生成脚本
+
+## Context
+
+本项目是一个 AI 舆情分析笔试题，要求从结构化新闻数据生成可读的分析日报 + 可视化图表。核心约束：**不能把原始数据丢给 AI 全量生成**，必须展示清晰的处理逻辑。前两个阶段（RSS 采集 + 结构化抽取）已完成，现在需要实现第三阶段：分析报告生成。
+
+## 产物
+
+- `reports/generate_report.py` — 主脚本
+- `reports/charts/*.png` — 4 张图表
+- `reports/ai_daily_report.html` — 最终 HTML 报告
+
+## 依赖
+
+在 `requirements.txt` 中添加 `matplotlib>=3.9,<4`
+
+---
+
+## 实现步骤
+
+### Step 1: 数据加载与预处理
+
+- 读取 `data/structured_news.json`（29 条新闻）
+- 按 `importance_score` 降序排序
+- 过滤 `data_quality == "low"` 的条目（仅用于统计，不进入深度分析）
+
+### Step 2: 统计分析
+
+纯 Python 处理逻辑，满足"展示处理过程"的约束：
+
+| 分析维度 | 方法 |
+|---------|------|
+| Top 事件 | `importance_score >= 8`，取 Top 5 |
+| 类别分布 | `Counter(item["category"])` |
+| 来源分布 | `Counter(item["source"])` |
+| 高频实体 | 展平所有 `entities`，Counter 取 Top 10 |
+| 趋势判断 | 按 category 分组，统计 sentiment 比例 + 事件数 |
+| 风险/机会 | 基于 sentiment + category + event_type 的规则过滤 |
+
+### Step 3: 图表生成（matplotlib）
+
+保存到 `reports/charts/`：
+
+1. **category_distribution.png** — 饼图，新闻类别分布
+2. **source_distribution.png** — 水平条形图，来源分布
+3. **top_importance.png** — 水平条形图，重要性评分 Top 事件（标题截断 25 字）
+4. **event_timeline.png** — 散点图，x=发布时间 y=重要性评分
+
+CJK 字体配置：`PingFang SC`（macOS），`rcParams['axes.unicode_minus'] = False`
+
+### Step 4: HTML 报告组装
+
+使用 Python f-string 模板（不引入 Jinja2），生成自包含 HTML：
+
+**必需章节：**
+1. 今日 AI 领域 Top 3-5 重要事件（标题 + 来源 + 评分徽章 + key_facts）
+2. 重要事件深度总结（impact + evidence + risk_or_opportunity）
+3. 趋势判断（技术/应用/政策/资本四个方向，基于规则生成趋势语句）
+4. 风险或机会提示（分两栏列出）
+5. 数据来源说明（来源列表 + 数据质量分布）
+6. 处理流程说明（描述三阶段 pipeline）
+
+**样式：** 内嵌 CSS，浅色专业主题，max-width 900px 居中，卡片式分区
+
+**图表引用：** `<img src="charts/xxx.png">` 相对路径
+
+### Step 5: 趋势判断逻辑（规则引擎）
+
+对四个关键方向（模型发布/应用/政策/资本）：
+- 统计该类别条目数和占比
+- 计算 sentiment 正负比
+- 提取该类别高频实体
+- 基于规则生成趋势语句（如：条目多+负面多→"存在较多负面信号"）
+
+---
+
+## 关键文件
+
+| 文件 | 作用 |
+|------|------|
+| `data/structured_news.json` | 输入数据（29 条） |
+| `reports/generate_report.py` | 新建，主脚本 |
+| `reports/charts/` | 输出目录，已存在 |
+| `requirements.txt` | 添加 matplotlib |
+| `scripts/structure_news.py` | 参考数据 schema |
+
+---
+
+## 验证
+
+1. `pip install matplotlib` 后运行 `python reports/generate_report.py`
+2. 确认 `reports/charts/` 下有 4 张 PNG
+3. 浏览器打开 `reports/ai_daily_report.html`，检查：
+   - 所有图表正常显示
+   - 中文无乱码
+   - 6 个章节内容完整
+   - Top 事件按 importance_score 排序正确（9, 9, 9, 8, 8...）
