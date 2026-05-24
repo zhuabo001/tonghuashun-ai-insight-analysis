@@ -1,0 +1,2016 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "tonghua-shun",
+    "languages": [
+      "html",
+      "json",
+      "markdown",
+      "plan",
+      "python",
+      "txt"
+    ],
+    "frameworks": [
+      "LLM API",
+      "feedparser",
+      "matplotlib"
+    ],
+    "description": "AI舆情分析日报系统（Daily AI Insight Engine）—— 从每日 AI 新闻中提取结构化洞察，生成可读分析报告与可视化结果。这是一个笔试题项目，核心约束是不能把原始数据丢给 AI 全量生成，必须体现处理逻辑。",
+    "analyzedAt": "2026-05-24T08:30:23.661Z",
+    "gitCommitHash": "0b24be39923ad685181fa3ee192afb12fc4af779"
+  },
+  "nodes": [
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "记录项目近期记忆上下文，包含2026-05-23的开发活动快照，用于Agent协作时的上下文恢复。",
+      "tags": [
+        "documentation",
+        "memory-context",
+        "agent-notes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:AI应用笔试题.md",
+      "type": "document",
+      "name": "AI应用笔试题.md",
+      "filePath": "AI应用笔试题.md",
+      "summary": "笔试题原始需求文档，定义AI舆情分析日报系统的项目背景、任务目标、数据获取要求、输出结果格式及限制条件。",
+      "tags": [
+        "documentation",
+        "requirements",
+        "笔试题",
+        "overview"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "项目核心架构说明文档，概述三阶段Pipeline、运行命令、结构化Schema、数据质量分级及关键架构决策。",
+      "tags": [
+        "documentation",
+        "architecture",
+        "entry-point",
+        "overview"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:data/news.json",
+      "type": "config",
+      "name": "news.json",
+      "filePath": "data/news.json",
+      "summary": "RSS采集阶段的原始输出数据，存储从各信源抓取的新闻条目，包含标题、摘要、URL、来源及发布时间等字段。",
+      "tags": [
+        "data-pipeline",
+        "raw-data",
+        "rss-output",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:data/structured_news.json",
+      "type": "config",
+      "name": "structured_news.json",
+      "filePath": "data/structured_news.json",
+      "summary": "结构化抽取阶段的输出数据，包含经过分类、实体提取、情感分析、重要性评分及质量控制后的结构化新闻条目。",
+      "tags": [
+        "data-pipeline",
+        "structured-data",
+        "schema-output",
+        "json"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "项目入口文档，介绍项目结构、数据源说明、输出示例、系统设计思路、核心流程及运行方式。",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "overview",
+        "getting-started"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reports/ai_daily_report.html",
+      "type": "file",
+      "name": "ai_daily_report.html",
+      "filePath": "reports/ai_daily_report.html",
+      "summary": "报告生成阶段的最终HTML产物，包含AI日报的完整可视化内容、图表嵌入及排版样式。",
+      "tags": [
+        "markup",
+        "report-output",
+        "visualization",
+        "html"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:reports/charts/design.md",
+      "type": "document",
+      "name": "charts/design.md",
+      "filePath": "reports/charts/design.md",
+      "summary": "图表目录下的极简占位文档，标记charts文件夹的设计用途。",
+      "tags": [
+        "documentation",
+        "placeholder",
+        "charts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:reports/design.md",
+      "type": "document",
+      "name": "reports/design.md",
+      "filePath": "reports/design.md",
+      "summary": "报告模块的设计文档，说明数据源、产物目标、分析方式及可视化图表类型。",
+      "tags": [
+        "documentation",
+        "design-spec",
+        "reporting",
+        "visualization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:reports/generate_report_progress.md",
+      "type": "document",
+      "name": "generate_report_progress.md",
+      "filePath": "reports/generate_report_progress.md",
+      "summary": "记录generate_report.py的开发进度状态，用于追踪报告生成模块的实现进展。",
+      "tags": [
+        "documentation",
+        "progress-tracking",
+        "reporting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:reports/generate_report.plan",
+      "type": "document",
+      "name": "generate_report.plan",
+      "filePath": "reports/generate_report.plan",
+      "summary": "报告生成模块的详细开发计划，分阶段规划分析逻辑、图表生成及HTML渲染的实现步骤。",
+      "tags": [
+        "documentation",
+        "plan",
+        "reporting",
+        "roadmap"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reports/generate_report.py",
+      "type": "file",
+      "name": "generate_report.py",
+      "filePath": "reports/generate_report.py",
+      "summary": "报告生成脚本，读取结构化新闻数据后通过纯Python规则引擎进行分析、生成matplotlib图表并渲染为HTML日报。",
+      "tags": [
+        "entry-point",
+        "reporting",
+        "visualization",
+        "rule-engine"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:reports/generate_report.py:load_news",
+      "type": "function",
+      "name": "load_news",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        23,
+        43
+      ],
+      "summary": "加载结构化新闻JSON文件，校验必要字段并按发布时间排序返回新闻列表。",
+      "tags": [
+        "data-loading",
+        "validation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:analyze",
+      "type": "function",
+      "name": "analyze",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        50,
+        153
+      ],
+      "summary": "核心分析引擎，对新闻数据进行多维度统计：类别分布、来源分布、实体频率、情感分布、时间线及风险/机会提取。",
+      "tags": [
+        "analysis",
+        "rule-engine",
+        "aggregation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:reports/generate_report.py:_trend_summary",
+      "type": "function",
+      "name": "_trend_summary",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        156,
+        167
+      ],
+      "summary": "辅助函数，为趋势统计生成带情感倾向的文本摘要。",
+      "tags": [
+        "utility",
+        "text-generation",
+        "trend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_setup_matplotlib",
+      "type": "function",
+      "name": "_setup_matplotlib",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        174,
+        181
+      ],
+      "summary": "配置matplotlib后端为Agg，确保在无GUI环境下生成静态图表。",
+      "tags": [
+        "utility",
+        "visualization",
+        "matplotlib"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_truncate",
+      "type": "function",
+      "name": "_truncate",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        184,
+        185
+      ],
+      "summary": "文本截断工具函数，用于限制图表标签长度。",
+      "tags": [
+        "utility",
+        "text-processing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:generate_charts",
+      "type": "function",
+      "name": "generate_charts",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        192,
+        296
+      ],
+      "summary": "生成四类可视化图表：类别饼图、来源横向柱状图、实体横向柱状图、重要性时间线散点图，并保存为PNG。",
+      "tags": [
+        "visualization",
+        "chart-generation",
+        "matplotlib"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:reports/generate_report.py:_score_badge",
+      "type": "function",
+      "name": "_score_badge",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        425,
+        427
+      ],
+      "summary": "生成重要性评分的HTML徽章标签。",
+      "tags": [
+        "utility",
+        "html-generation",
+        "badge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_sentiment_badge",
+      "type": "function",
+      "name": "_sentiment_badge",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        430,
+        433
+      ],
+      "summary": "生成情感倾向的HTML徽章标签。",
+      "tags": [
+        "utility",
+        "html-generation",
+        "badge"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_render_top_events",
+      "type": "function",
+      "name": "_render_top_events",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        436,
+        456
+      ],
+      "summary": "渲染Top5重要事件的HTML卡片列表。",
+      "tags": [
+        "html-generation",
+        "rendering",
+        "top-events"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_render_deep_summary",
+      "type": "function",
+      "name": "_render_deep_summary",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        459,
+        471
+      ],
+      "summary": "渲染深度摘要板块的HTML内容。",
+      "tags": [
+        "html-generation",
+        "rendering",
+        "summary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_render_trends",
+      "type": "function",
+      "name": "_render_trends",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        474,
+        494
+      ],
+      "summary": "渲染趋势分析板块的HTML内容。",
+      "tags": [
+        "html-generation",
+        "rendering",
+        "trends"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_render_risks_opportunities",
+      "type": "function",
+      "name": "_render_risks_opportunities",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        497,
+        522
+      ],
+      "summary": "渲染风险与机会板块的HTML卡片内容。",
+      "tags": [
+        "html-generation",
+        "rendering",
+        "risk-opportunity"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_render_data_sources",
+      "type": "function",
+      "name": "_render_data_sources",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        525,
+        547
+      ],
+      "summary": "渲染数据来源与质量分布的HTML表格。",
+      "tags": [
+        "html-generation",
+        "rendering",
+        "data-sources"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_render_pipeline",
+      "type": "function",
+      "name": "_render_pipeline",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        550,
+        569
+      ],
+      "summary": "渲染三阶段Pipeline流程图的HTML内容。",
+      "tags": [
+        "html-generation",
+        "rendering",
+        "pipeline"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:_render_charts",
+      "type": "function",
+      "name": "_render_charts",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        572,
+        588
+      ],
+      "summary": "渲染图表展示板块的HTML图片引用。",
+      "tags": [
+        "html-generation",
+        "rendering",
+        "charts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reports/generate_report.py:generate_html",
+      "type": "function",
+      "name": "generate_html",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        591,
+        651
+      ],
+      "summary": "组装完整HTML日报页面，整合Top事件、深度摘要、趋势、风险机会、图表及数据来源各板块。",
+      "tags": [
+        "html-generation",
+        "reporting",
+        "assembly"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:reports/generate_report.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "reports/generate_report.py",
+      "lineRange": [
+        658,
+        676
+      ],
+      "summary": "报告生成脚本的入口函数，串联数据加载、分析、图表生成及HTML输出全流程。",
+      "tags": [
+        "entry-point",
+        "orchestration",
+        "main"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:requirements.txt",
+      "type": "config",
+      "name": "requirements.txt",
+      "filePath": "requirements.txt",
+      "summary": "项目Python依赖清单，包含feedparser、matplotlib等核心库。",
+      "tags": [
+        "configuration",
+        "dependencies",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:scripts/design.md",
+      "type": "document",
+      "name": "scripts/design.md",
+      "filePath": "scripts/design.md",
+      "summary": "RSS采集与结构化处理模块的详细设计文档，涵盖信源配置、清洗规则、过滤策略、去重逻辑及数据格式规范。",
+      "tags": [
+        "documentation",
+        "design-spec",
+        "rss",
+        "data-pipeline"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:scripts/news_rss.py",
+      "type": "file",
+      "name": "news_rss.py",
+      "filePath": "scripts/news_rss.py",
+      "summary": "RSS采集脚本，负责从多信源拉取AI新闻、文本清洗、AI关键词过滤、时间过滤、去重及合并，输出news.json。",
+      "tags": [
+        "entry-point",
+        "rss",
+        "data-collection",
+        "filtering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:scripts/news_rss.py:RssSource",
+      "type": "class",
+      "name": "RssSource",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        33,
+        38
+      ],
+      "summary": "RSS信源配置数据类，定义信源名称、URL、语言、优先级及AI专属标记。",
+      "tags": [
+        "data-model",
+        "configuration",
+        "rss"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:scripts/news_rss.py:SourceStats",
+      "type": "class",
+      "name": "SourceStats",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        42,
+        44
+      ],
+      "summary": "信源统计计数数据类，记录每个信源的抓取数与接受数。",
+      "tags": [
+        "data-model",
+        "statistics",
+        "rss"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:clean_text",
+      "type": "function",
+      "name": "clean_text",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        279,
+        290
+      ],
+      "summary": "文本清洗函数，去除HTML标签、解码HTML实体、压缩空白并截断过长摘要。",
+      "tags": [
+        "utility",
+        "text-processing",
+        "cleaning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:contains_keyword",
+      "type": "function",
+      "name": "contains_keyword",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        293,
+        307
+      ],
+      "summary": "关键词匹配函数，支持正则与简单子串两种模式，用于AI白名单判定。",
+      "tags": [
+        "utility",
+        "matching",
+        "keyword"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:is_ai_related",
+      "type": "function",
+      "name": "is_ai_related",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        310,
+        321
+      ],
+      "summary": "判断新闻是否AI相关，根据信源类型分别应用标题或标题+摘要的关键词匹配策略。",
+      "tags": [
+        "filtering",
+        "classification",
+        "ai-detection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:parse_published",
+      "type": "function",
+      "name": "parse_published",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        324,
+        328
+      ],
+      "summary": "解析RSS条目的发布时间，处理字符串与time.struct_time两种格式。",
+      "tags": [
+        "utility",
+        "date-parsing",
+        "rss"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:is_recent",
+      "type": "function",
+      "name": "is_recent",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        331,
+        335
+      ],
+      "summary": "时间过滤函数，判定新闻发布时间是否在3天窗口内。",
+      "tags": [
+        "utility",
+        "filtering",
+        "time-window"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:generate_id",
+      "type": "function",
+      "name": "generate_id",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        338,
+        339
+      ],
+      "summary": "基于URL生成稳定的MD5新闻ID，用于去重与关联。",
+      "tags": [
+        "utility",
+        "id-generation",
+        "deduplication"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:entry_to_news",
+      "type": "function",
+      "name": "entry_to_news",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        342,
+        368
+      ],
+      "summary": "将单个RSS条目转换为标准化新闻字典，执行清洗、时间解析、AI过滤及ID生成。",
+      "tags": [
+        "transformation",
+        "rss",
+        "normalization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/news_rss.py:load_existing_news",
+      "type": "function",
+      "name": "load_existing_news",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        371,
+        380
+      ],
+      "summary": "加载已有的news.json数据，用于增量合并与去重。",
+      "tags": [
+        "utility",
+        "data-loading",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:parse_iso_datetime",
+      "type": "function",
+      "name": "parse_iso_datetime",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        383,
+        392
+      ],
+      "summary": "解析ISO格式时间字符串，兼容带Z后缀及无时区格式。",
+      "tags": [
+        "utility",
+        "date-parsing",
+        "normalization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:normalize_existing_news",
+      "type": "function",
+      "name": "normalize_existing_news",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        395,
+        424
+      ],
+      "summary": "对历史新闻数据进行二次清理与字段规范化，确保与新生成数据格式一致。",
+      "tags": [
+        "normalization",
+        "cleaning",
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/news_rss.py:sort_key",
+      "type": "function",
+      "name": "sort_key",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        427,
+        429
+      ],
+      "summary": "生成新闻排序键，按优先级与发布时间降序排列。",
+      "tags": [
+        "utility",
+        "sorting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:merge_news",
+      "type": "function",
+      "name": "merge_news",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        432,
+        447
+      ],
+      "summary": "合并已有数据与新生成数据，按ID去重后排序并限制条目上限。",
+      "tags": [
+        "merging",
+        "deduplication",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/news_rss.py:save_news",
+      "type": "function",
+      "name": "save_news",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        450,
+        455
+      ],
+      "summary": "将新闻列表序列化为JSON并写入data/news.json。",
+      "tags": [
+        "utility",
+        "persistence",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:fetch_feed_entries",
+      "type": "function",
+      "name": "fetch_feed_entries",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        458,
+        461
+      ],
+      "summary": "使用feedparser拉取单个RSS源的全部条目。",
+      "tags": [
+        "utility",
+        "rss",
+        "network"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:collect_entries",
+      "type": "function",
+      "name": "collect_entries",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        464,
+        472
+      ],
+      "summary": "遍历所有配置信源，收集RSS条目并统计每个信源的抓取与接受数量。",
+      "tags": [
+        "orchestration",
+        "rss",
+        "collection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/news_rss.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/news_rss.py",
+      "lineRange": [
+        475,
+        497
+      ],
+      "summary": "RSS采集脚本的入口函数，串联采集、转换、合并、保存的完整流程。",
+      "tags": [
+        "entry-point",
+        "orchestration",
+        "main"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:scripts/rss-python-plan.md",
+      "type": "document",
+      "name": "rss-python-plan.md",
+      "filePath": "scripts/rss-python-plan.md",
+      "summary": "RSS采集模块的详细开发计划，按10个阶段规划从脚本入口到验证方案的实现步骤。",
+      "tags": [
+        "documentation",
+        "plan",
+        "rss",
+        "roadmap"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:scripts/rss-python-progress.md",
+      "type": "document",
+      "name": "rss-python-progress.md",
+      "filePath": "scripts/rss-python-progress.md",
+      "summary": "记录RSS采集模块的开发进度状态，用于追踪各阶段完成情况。",
+      "tags": [
+        "documentation",
+        "progress-tracking",
+        "rss"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/structure_news.py",
+      "type": "file",
+      "name": "structure_news.py",
+      "filePath": "scripts/structure_news.py",
+      "summary": "结构化抽取脚本，对原始新闻进行数据质量分级、分类、实体提取、情感分析、重要性评分及schema校验，输出structured_news.json。",
+      "tags": [
+        "entry-point",
+        "structuring",
+        "rule-engine",
+        "data-pipeline"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:scripts/structure_news.py:RawNewsItem",
+      "type": "class",
+      "name": "RawNewsItem",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        38,
+        44
+      ],
+      "summary": "原始新闻数据类，定义RSS采集后的基础字段结构。",
+      "tags": [
+        "data-model",
+        "schema",
+        "raw-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:scripts/structure_news.py:StructuredNewsItem",
+      "type": "class",
+      "name": "StructuredNewsItem",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        48,
+        64
+      ],
+      "summary": "结构化新闻数据类，扩展原始字段并增加分类、实体、情感、重要性评分、事实依据及质量控制字段。",
+      "tags": [
+        "data-model",
+        "schema",
+        "structured-data"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/structure_news.py:normalize_space",
+      "type": "function",
+      "name": "normalize_space",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        67,
+        68
+      ],
+      "summary": "压缩并规范化空白字符。",
+      "tags": [
+        "utility",
+        "text-processing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:contains_any",
+      "type": "function",
+      "name": "contains_any",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        71,
+        73
+      ],
+      "summary": "判断文本是否包含任意关键词，用于规则匹配。",
+      "tags": [
+        "utility",
+        "matching",
+        "keyword"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:load_raw_news",
+      "type": "function",
+      "name": "load_raw_news",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        76,
+        88
+      ],
+      "summary": "加载原始新闻JSON并映射为RawNewsItem对象列表。",
+      "tags": [
+        "utility",
+        "data-loading",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:is_hn_metadata_summary",
+      "type": "function",
+      "name": "is_hn_metadata_summary",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        91,
+        92
+      ],
+      "summary": "检测摘要是否为Hacker News社区元数据而非正文内容。",
+      "tags": [
+        "utility",
+        "filtering",
+        "hackernews"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:is_effective_summary",
+      "type": "function",
+      "name": "is_effective_summary",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        95,
+        96
+      ],
+      "summary": "判断摘要是否为有效正文，排除HN元数据及空值。",
+      "tags": [
+        "utility",
+        "filtering",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:inference_text",
+      "type": "function",
+      "name": "inference_text",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        99,
+        102
+      ],
+      "summary": "决定分类与推断时使用的文本来源：优先使用有效摘要，否则回退到标题。",
+      "tags": [
+        "utility",
+        "inference",
+        "text-selection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:infer_data_quality",
+      "type": "function",
+      "name": "infer_data_quality",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        105,
+        116
+      ],
+      "summary": "根据信源可信度与摘要质量推断数据质量等级：high、medium、low。",
+      "tags": [
+        "quality-control",
+        "classification",
+        "rule-engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:infer_category",
+      "type": "function",
+      "name": "infer_category",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        119,
+        152
+      ],
+      "summary": "基于关键词规则推断新闻类别，覆盖模型发布、产品动态、研究突破、政策监管等8个分类。",
+      "tags": [
+        "classification",
+        "rule-engine",
+        "category"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/structure_news.py:infer_event_type",
+      "type": "function",
+      "name": "infer_event_type",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        155,
+        170
+      ],
+      "summary": "基于关键词规则推断事件类型，如发布、合作、融资、安全事件等。",
+      "tags": [
+        "classification",
+        "rule-engine",
+        "event-type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:extract_entities",
+      "type": "function",
+      "name": "extract_entities",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        205,
+        218
+      ],
+      "summary": "从新闻文本中提取公司、机构、模型名称等实体，结合预定义列表与正则匹配。",
+      "tags": [
+        "extraction",
+        "entity",
+        "rule-engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:infer_sentiment",
+      "type": "function",
+      "name": "infer_sentiment",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        221,
+        252
+      ],
+      "summary": "基于情感词典规则推断新闻情感倾向：正面、负面、中性，并计算情感强度。",
+      "tags": [
+        "classification",
+        "sentiment",
+        "rule-engine"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/structure_news.py:extract_key_facts",
+      "type": "function",
+      "name": "extract_key_facts",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        255,
+        269
+      ],
+      "summary": "从摘要中提取关键事实句，按句子拆分并过滤短句与元数据。",
+      "tags": [
+        "extraction",
+        "facts",
+        "rule-engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:build_evidence",
+      "type": "function",
+      "name": "build_evidence",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        272,
+        276
+      ],
+      "summary": "构建证据字段，保留有效摘要中的关键句子作为事实依据。",
+      "tags": [
+        "extraction",
+        "evidence",
+        "rule-engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:infer_impact",
+      "type": "function",
+      "name": "infer_impact",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        279,
+        294
+      ],
+      "summary": "基于类别与事件类型推断新闻的行业影响范围与深度。",
+      "tags": [
+        "classification",
+        "impact",
+        "rule-engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:infer_risk_or_opportunity",
+      "type": "function",
+      "name": "infer_risk_or_opportunity",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        297,
+        308
+      ],
+      "summary": "基于类别、事件类型与情感倾向推断新闻代表的风险或机会。",
+      "tags": [
+        "classification",
+        "risk-opportunity",
+        "rule-engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:infer_importance_score",
+      "type": "function",
+      "name": "infer_importance_score",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        311,
+        333
+      ],
+      "summary": "综合信源权重、类别、事件类型、数据质量及Hacker News积分计算重要性评分。",
+      "tags": [
+        "scoring",
+        "importance",
+        "rule-engine"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/structure_news.py:structure_item",
+      "type": "function",
+      "name": "structure_item",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        336,
+        360
+      ],
+      "summary": "对单条原始新闻执行完整的结构化处理，串联质量推断、分类、实体提取、情感分析、评分及校验。",
+      "tags": [
+        "orchestration",
+        "structuring",
+        "pipeline-step"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/structure_news.py:validate_structured_item",
+      "type": "function",
+      "name": "validate_structured_item",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        363,
+        394
+      ],
+      "summary": "对结构化结果进行字段类型、取值范围及必填项的schema校验，自动修正越界值。",
+      "tags": [
+        "validation",
+        "schema",
+        "quality-control"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/structure_news.py:structure_news",
+      "type": "function",
+      "name": "structure_news",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        397,
+        403
+      ],
+      "summary": "批量处理原始新闻列表，逐条调用structure_item并收集结果。",
+      "tags": [
+        "orchestration",
+        "batch-processing",
+        "structuring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:write_structured_news",
+      "type": "function",
+      "name": "write_structured_news",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        406,
+        409
+      ],
+      "summary": "将结构化新闻列表序列化为JSON并写入data/structured_news.json。",
+      "tags": [
+        "utility",
+        "persistence",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/structure_news.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/structure_news.py",
+      "lineRange": [
+        412,
+        424
+      ],
+      "summary": "结构化抽取脚本的入口函数，串联数据加载、批量处理、结果保存及质量统计输出。",
+      "tags": [
+        "entry-point",
+        "orchestration",
+        "main"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:scripts/structure-data-plan.md",
+      "type": "document",
+      "name": "structure-data-plan.md",
+      "filePath": "scripts/structure-data-plan.md",
+      "summary": "结构化数据处理模块的实现方案文档，涵盖Schema定义、字段角色、实现变更及测试计划。",
+      "tags": [
+        "documentation",
+        "plan",
+        "schema",
+        "roadmap"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:scripts/structure-process-design.md",
+      "type": "document",
+      "name": "structure-process-design.md",
+      "filePath": "scripts/structure-process-design.md",
+      "summary": "结构化抽取流程的详细设计文档，解释各字段设计理由、分批处理策略、低质量数据处理及schema校验规则。",
+      "tags": [
+        "documentation",
+        "design-spec",
+        "schema",
+        "data-pipeline"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:load_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:analyze",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_trend_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_setup_matplotlib",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_truncate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:generate_charts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_score_badge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_sentiment_badge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_render_top_events",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_render_deep_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_render_trends",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_render_risks_opportunities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_render_data_sources",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_render_pipeline",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:_render_charts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:generate_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "function:reports/generate_report.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "config:data/structured_news.json",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:reports/generate_report.py",
+      "target": "file:reports/ai_daily_report.html",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "class:scripts/news_rss.py:RssSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "class:scripts/news_rss.py:SourceStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:clean_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:contains_keyword",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:is_ai_related",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:parse_published",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:is_recent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:generate_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:entry_to_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:load_existing_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:parse_iso_datetime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:normalize_existing_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:sort_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:merge_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:save_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:fetch_feed_entries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:collect_entries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "function:scripts/news_rss.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/news_rss.py",
+      "target": "config:data/news.json",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "class:scripts/structure_news.py:RawNewsItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "class:scripts/structure_news.py:StructuredNewsItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:normalize_space",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:contains_any",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:load_raw_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:is_hn_metadata_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:is_effective_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:inference_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:infer_data_quality",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:infer_category",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:infer_event_type",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:extract_entities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:infer_sentiment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:extract_key_facts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:build_evidence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:infer_impact",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:infer_risk_or_opportunity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:infer_importance_score",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:structure_item",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:validate_structured_item",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:structure_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:write_structured_news",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "function:scripts/structure_news.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "config:data/news.json",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:scripts/structure_news.py",
+      "target": "config:data/structured_news.json",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:requirements.txt",
+      "target": "file:scripts/news_rss.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:requirements.txt",
+      "target": "file:scripts/structure_news.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:requirements.txt",
+      "target": "file:reports/generate_report.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:scripts/news_rss.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:scripts/structure_news.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:reports/generate_report.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "file:scripts/news_rss.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "file:scripts/structure_news.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "file:reports/generate_report.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:scripts/design.md",
+      "target": "file:scripts/news_rss.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:scripts/design.md",
+      "target": "file:scripts/structure_news.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:scripts/structure-process-design.md",
+      "target": "file:scripts/structure_news.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:scripts/structure-data-plan.md",
+      "target": "file:scripts/structure_news.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:scripts/rss-python-plan.md",
+      "target": "file:scripts/news_rss.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:reports/design.md",
+      "target": "file:reports/generate_report.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:reports/generate_report.plan",
+      "target": "file:reports/generate_report.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:AI应用笔试题.md",
+      "target": "file:scripts/news_rss.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:AI应用笔试题.md",
+      "target": "file:scripts/structure_news.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:AI应用笔试题.md",
+      "target": "file:reports/generate_report.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:reports/ai_daily_report.html",
+      "target": "file:reports/generate_report.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:pipeline",
+      "name": "Pipeline 层",
+      "description": "三阶段数据处理 Pipeline 的执行脚本，包含 RSS 采集、新闻结构化抽取和报告生成",
+      "nodeIds": [
+        "file:scripts/news_rss.py",
+        "file:scripts/structure_news.py",
+        "file:reports/generate_report.py"
+      ]
+    },
+    {
+      "id": "layer:data",
+      "name": "数据层",
+      "description": "Pipeline 各阶段产出的中间数据与持久化文件，包括原始 RSS 新闻和结构化后的新闻数据",
+      "nodeIds": [
+        "config:data/news.json",
+        "config:data/structured_news.json",
+        "file:reports/ai_daily_report.html"
+      ]
+    },
+    {
+      "id": "layer:design-doc",
+      "name": "设计文档层",
+      "description": "各模块的设计方案、进度跟踪与计划文档，覆盖 RSS 采集、结构化处理和报告生成的完整设计过程",
+      "nodeIds": [
+        "document:scripts/design.md",
+        "document:scripts/rss-python-plan.md",
+        "document:scripts/rss-python-progress.md",
+        "document:scripts/structure-data-plan.md",
+        "document:scripts/structure-process-design.md",
+        "document:reports/design.md",
+        "document:reports/charts/design.md",
+        "document:reports/generate_report.plan",
+        "document:reports/generate_report_progress.md"
+      ]
+    },
+    {
+      "id": "layer:project-doc",
+      "name": "项目文档层",
+      "description": "项目级说明文档，包括 README、笔试题要求、CLAUDE.md 项目指引和 AGENTS 配置说明",
+      "nodeIds": [
+        "document:README.md",
+        "document:AI应用笔试题.md",
+        "document:CLAUDE.md",
+        "document:AGENTS.md"
+      ]
+    },
+    {
+      "id": "layer:config",
+      "name": "配置层",
+      "description": "项目运行依赖与构建配置，包括 Python 依赖清单 requirements.txt",
+      "nodeIds": [
+        "config:requirements.txt"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "项目概览与README",
+      "description": "从README.md开始，了解AI舆情分析日报系统的整体定位：一个从每日AI新闻中提取结构化洞察、生成可读分析报告与可视化结果的三阶段Pipeline。README还说明了项目结构、数据源选择逻辑（中文AI社区x2 + 英文AI社区x2 + 聚合站x1）以及核心运行命令，为后续深入代码提供全局视角。",
+      "nodeIds": [
+        "document:README.md"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "RSS采集设计思路",
+      "description": "在运行采集脚本之前，先阅读scripts/design.md，理解RSS采集模块的设计决策。文档详细定义了五个信息源的Schema（名称、RSS地址、语言、优先级、ai_only标记）、信源黑名单（覆盖美容护肤、汽车、财经股市等噪声类别）、中英文AI白名单关键词、以及信息获取与清洗的完整流程。这些规则决定了哪些新闻能进入data/news.json，是整个Pipeline的数据质量第一道关卡。",
+      "nodeIds": [
+        "document:scripts/design.md"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "RSS采集脚本",
+      "description": "scripts/news_rss.py是整个系统的数据入口。脚本使用feedparser拉取五个RSS源，每个源最多处理前10条entry，经过HTML标签清洗、摘要截断、黑名单优先过滤、AI白名单校验、3天时间窗口过滤后，生成稳定ID并与已有data/news.json合并去重。关键设计包括：按URL生成12位MD5 ID实现去重、对历史数据二次清理以适配规则更新、最多保留80条新闻。",
+      "nodeIds": [
+        "file:scripts/news_rss.py"
+      ],
+      "languageLesson": "Python的dataclass用于声明式定义RssSource和SourceStats，配合frozen=True保证配置不可变；pathlib.Path取代os.path，使跨平台路径操作更直观。"
+    },
+    {
+      "order": 4,
+      "title": "原始数据与依赖配置",
+      "description": "采集脚本的输出写入data/news.json，这是结构化抽取阶段的原始物料。同时，requirements.txt定义了项目所需的Python依赖（如feedparser、matplotlib等）。理解数据中间产物的位置和依赖范围，有助于把握整个Pipeline的数据流和运行环境。",
+      "nodeIds": [
+        "config:data/news.json",
+        "config:requirements.txt"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "结构化处理设计思路",
+      "description": "scripts/structure-process-design.md阐述了为什么需要结构化抽取：原始数据质量不均匀、AI容易混淆不同新闻的主体和事实、输出结果难以校验。文档定义了StructuredNewsItem的完整Schema，包括基础追溯字段、分类字段（category/event_type）、舆情字段（sentiment/importance_score）、事实依据字段（key_facts/impact/risk_or_opportunity/evidence）以及质量控制字段（data_quality/needs_review）。理解这个Schema是后续阅读结构化和报告生成代码的前提。",
+      "nodeIds": [
+        "document:scripts/structure-process-design.md"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "新闻结构化处理脚本",
+      "description": "scripts/structure_news.py是Pipeline的第二棒。它读取data/news.json，按BATCH_SIZE=1单条处理，避免不同新闻间的实体和事实互相混淆。脚本通过规则引擎推断category、event_type、sentiment、importance_score等字段，并针对Hacker News元数据摘要进行特殊处理（data_quality标记为low）。处理完成后，输出经过校验的data/structured_news.json，为报告生成提供高质量结构化数据。",
+      "nodeIds": [
+        "file:scripts/structure_news.py"
+      ],
+      "languageLesson": "Python的dataclass配合asdict()可快速将对象序列化为JSON；正则表达式re.compile预编译模式（如HN_METADATA_PATTERN）能提升批量匹配性能。"
+    },
+    {
+      "order": 7,
+      "title": "结构化数据产物",
+      "description": "data/structured_news.json是连接采集与报告生成的关键中间数据。每条记录包含从原始新闻提取的完整结构化字段，以及data_quality和needs_review两个质量控制标记。低质量条目（如Hacker News仅含元数据的新闻）会被保守处理，仅参与分布统计而不进入深度分析，这是系统避免AI幻觉和数据污染的重要机制。",
+      "nodeIds": [
+        "config:data/structured_news.json"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "报告生成设计思路",
+      "description": "reports/design.md定义了日报分析模块的目标产物和分析方式。产物是一份自包含的HTML文件，包含Top重要事件、深度总结、趋势判断、风险/机会提示、数据来源说明和处理流程说明。分析方式强调纯Python规则引擎：按importance_score选Top事件、按category聚合趋势、按entities识别高频主体，完全不依赖LLM生成分析结论，体现了题目核心约束。",
+      "nodeIds": [
+        "document:reports/design.md"
+      ]
+    },
+    {
+      "order": 9,
+      "title": "报告生成主脚本",
+      "description": "reports/generate_report.py是Pipeline的最后一棒，承担统计分析、图表生成和HTML报告组装三项职责。脚本首先加载structured_news.json，分离高质量条目；然后通过Counter聚合类别分布、来源分布、情感分布和高频实体，按规则引擎生成趋势语句；接着用matplotlib生成4张静态PNG图表（类别分布饼图、来源分布条形图、重要性评分Top事件图、事件时间线散点图）；最后通过Python f-string模板将所有分析结果和图表引用组装为自包含的HTML文件。",
+      "nodeIds": [
+        "file:reports/generate_report.py"
+      ],
+      "languageLesson": "Python的collections.Counter是快速统计可哈希对象频率的利器；matplotlib的Agg后端支持无GUI环境生成静态图片，配合rcParams配置CJK字体可解决中文乱码问题。"
+    },
+    {
+      "order": 10,
+      "title": "日报HTML报告",
+      "description": "reports/ai_daily_report.html是系统的最终交付物。这份自包含HTML文件引用reports/charts/目录下生成的PNG图表，以卡片式布局展示Top重要事件、深度总结、趋势判断、风险与机会提示、数据来源说明和处理流程。理解最终报告的页面结构和数据映射关系，有助于验证前面三个脚本的数据处理逻辑是否正确落地。",
+      "nodeIds": [
+        "file:reports/ai_daily_report.html"
+      ]
+    },
+    {
+      "order": 11,
+      "title": "项目指引与开发规范",
+      "description": "CLAUDE.md是面向Claude Code的项目指引文档，记录了系统的核心架构决策：三阶段Pipeline的数据流、StructuredNewsItem的Schema设计、数据质量分级规则（high/medium/low）、Hacker News元数据隔离策略、BATCH_SIZE=1的设计理由、RSS过滤优先级（黑名单>时间过滤>AI白名单），以及报告生成阶段纯Python规则引擎的约束。这些决策贯穿整个代码库，是理解设计意图的关键参考。",
+      "nodeIds": [
+        "document:CLAUDE.md"
+      ]
+    }
+  ]
+}
