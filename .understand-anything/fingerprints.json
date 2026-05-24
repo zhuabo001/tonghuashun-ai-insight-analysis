@@ -1,0 +1,956 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "0b24be39923ad685181fa3ee192afb12fc4af779",
+  "generatedAt": "2026-05-24T08:30:45.244Z",
+  "files": {
+    "AGENTS.md": {
+      "filePath": "AGENTS.md",
+      "contentHash": "a44b4bef3eadeb7ffefc96b28730a5227a3f299d928c0db1afb0db79f9e27d4c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "AI应用笔试题.md": {
+      "filePath": "AI应用笔试题.md",
+      "contentHash": "6db15df353ee8cff6763263563c69e9346cf1de53a07c2fa1d1f5a7a274af1f7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 151,
+      "hasStructuralAnalysis": true
+    },
+    "CLAUDE.md": {
+      "filePath": "CLAUDE.md",
+      "contentHash": "1d68ebade4337d03b0c79aff1beba69d7f7ee6d9c56a8a70d97794d91db4c1c2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "data/news.json": {
+      "filePath": "data/news.json",
+      "contentHash": "f73008d2892618b196384ec2edc120bc468d32b7a25732b6707f5f1da8f6c327",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 322,
+      "hasStructuralAnalysis": true
+    },
+    "data/structured_news.json": {
+      "filePath": "data/structured_news.json",
+      "contentHash": "8f90d4f52f7867aef8cb66e3353d731da6b2d118568b20a8bd58af8fec0cedd9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 677,
+      "hasStructuralAnalysis": true
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "1e7695fe37ecc29467a76fae4a203b5523b73e1bba7ec4a846a7db0ee322d4d0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 97,
+      "hasStructuralAnalysis": true
+    },
+    "reports/ai_daily_report.html": {
+      "filePath": "reports/ai_daily_report.html",
+      "contentHash": "387139dfe92f4642170c5e619d89529209e773dfd752e20a9a6c88df213b9327",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 455,
+      "hasStructuralAnalysis": false
+    },
+    "reports/charts/design.md": {
+      "filePath": "reports/charts/design.md",
+      "contentHash": "0bcf45eaf9a1b90827c58e075dead57179054c8178c8df6971fba96e7e5bcecf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": true
+    },
+    "reports/design.md": {
+      "filePath": "reports/design.md",
+      "contentHash": "fa0cf5615184eb6bbb9901b84d4c15ebb2b57eca6c264e13c43d091385390ad2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "reports/generate_report_progress.md": {
+      "filePath": "reports/generate_report_progress.md",
+      "contentHash": "ea7939d33e96875c4ffa64d95b198c9da192c938e4c5f00f6519d6b613711763",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "reports/generate_report.plan": {
+      "filePath": "reports/generate_report.plan",
+      "contentHash": "321ce17e6775c5b0d7d8155bbe9c32f3231303e3fae480b014c32dcfcb787bf9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 98,
+      "hasStructuralAnalysis": false
+    },
+    "reports/generate_report.py": {
+      "filePath": "reports/generate_report.py",
+      "contentHash": "1bc353661bbae1fa2c1641423d101e24160c1dec4e9034a41ad6f82586234fff",
+      "functions": [
+        {
+          "name": "load_news",
+          "params": [
+            "path"
+          ],
+          "returnType": "tuple[list[dict], list[dict]]",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "analyze",
+          "params": [
+            "all_items",
+            "quality_items"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 104
+        },
+        {
+          "name": "_trend_summary",
+          "params": [
+            "label",
+            "count",
+            "sent"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "_setup_matplotlib",
+          "params": [],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "_truncate",
+          "params": [
+            "text",
+            "max_len"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "generate_charts",
+          "params": [
+            "analysis",
+            "charts_dir"
+          ],
+          "returnType": "dict[str, Path]",
+          "exported": true,
+          "lineCount": 105
+        },
+        {
+          "name": "_score_badge",
+          "params": [
+            "score"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "_sentiment_badge",
+          "params": [
+            "s"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "_render_top_events",
+          "params": [
+            "top_events"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "_render_deep_summary",
+          "params": [
+            "top_events"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "_render_trends",
+          "params": [
+            "trends"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "_render_risks_opportunities",
+          "params": [
+            "risks",
+            "opps"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "_render_data_sources",
+          "params": [
+            "source_dist",
+            "quality_dist",
+            "total"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "_render_pipeline",
+          "params": [],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "_render_charts",
+          "params": [
+            "chart_paths",
+            "charts_dir"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "generate_html",
+          "params": [
+            "analysis",
+            "chart_paths",
+            "charts_dir",
+            "output_path",
+            "report_date"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 61
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "collections",
+          "specifiers": [
+            "Counter"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime",
+            "timezone"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [
+        "load_news",
+        "analyze",
+        "_trend_summary",
+        "_setup_matplotlib",
+        "_truncate",
+        "generate_charts",
+        "_score_badge",
+        "_sentiment_badge",
+        "_render_top_events",
+        "_render_deep_summary",
+        "_render_trends",
+        "_render_risks_opportunities",
+        "_render_data_sources",
+        "_render_pipeline",
+        "_render_charts",
+        "generate_html",
+        "main"
+      ],
+      "totalLines": 681,
+      "hasStructuralAnalysis": true
+    },
+    "requirements.txt": {
+      "filePath": "requirements.txt",
+      "contentHash": "51d3488dd0a09244e9983428e590d194157946f495849acf74ecaa0a472ca922",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/design.md": {
+      "filePath": "scripts/design.md",
+      "contentHash": "9584a648f394076f0ac10f8b8febc6633f291e905f746d8ed8ad1e6d5cbe610e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 256,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/news_rss.py": {
+      "filePath": "scripts/news_rss.py",
+      "contentHash": "970b3bf76695ce1a30a5ef1be004f7b4a4b89b54aee0674dd988d670619afd28",
+      "functions": [
+        {
+          "name": "clean_text",
+          "params": [
+            "value",
+            "max_len"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "contains_keyword",
+          "params": [
+            "text",
+            "keywords"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "is_ai_related",
+          "params": [
+            "title",
+            "summary",
+            "lang",
+            "ai_only"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "parse_published",
+          "params": [
+            "entry"
+          ],
+          "returnType": "datetime | None",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "is_recent",
+          "params": [
+            "published",
+            "now"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "generate_id",
+          "params": [
+            "url"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "entry_to_news",
+          "params": [
+            "source",
+            "entry",
+            "now"
+          ],
+          "returnType": "dict | None",
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "load_existing_news",
+          "params": [],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "parse_iso_datetime",
+          "params": [
+            "value"
+          ],
+          "returnType": "datetime | None",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "normalize_existing_news",
+          "params": [
+            "item",
+            "now"
+          ],
+          "returnType": "dict | None",
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "sort_key",
+          "params": [
+            "item"
+          ],
+          "returnType": "tuple[int, str]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "merge_news",
+          "params": [
+            "existing",
+            "fresh",
+            "now"
+          ],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "save_news",
+          "params": [
+            "items"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "fetch_feed_entries",
+          "params": [
+            "source"
+          ],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "collect_entries",
+          "params": [],
+          "returnType": "tuple[list[tuple[RssSource, dict]], dict[str, SourceStats]]",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [
+        {
+          "name": "RssSource",
+          "methods": [],
+          "properties": [
+            "name",
+            "url",
+            "lang",
+            "priority",
+            "ai_only"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "SourceStats",
+          "methods": [],
+          "properties": [
+            "fetched",
+            "accepted"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "imports": [
+        {
+          "source": "html",
+          "specifiers": [
+            "html"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "dataclasses",
+          "specifiers": [
+            "dataclass"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "UTC",
+            "datetime",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "struct_time"
+          ]
+        }
+      ],
+      "exports": [
+        "RssSource",
+        "SourceStats",
+        "clean_text",
+        "contains_keyword",
+        "is_ai_related",
+        "parse_published",
+        "is_recent",
+        "generate_id",
+        "entry_to_news",
+        "load_existing_news",
+        "parse_iso_datetime",
+        "normalize_existing_news",
+        "sort_key",
+        "merge_news",
+        "save_news",
+        "fetch_feed_entries",
+        "collect_entries",
+        "main"
+      ],
+      "totalLines": 502,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/rss-python-plan.md": {
+      "filePath": "scripts/rss-python-plan.md",
+      "contentHash": "ead880e819f8a4d971ff9a8fc418a34645a23056ed72c369d46b2089447e7362",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 256,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/rss-python-progress.md": {
+      "filePath": "scripts/rss-python-progress.md",
+      "contentHash": "cfc59a0d69b4c5118f5da6a5fd9a0c8095c127f821752d5d6de64d2a9ba11ee3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/structure_news.py": {
+      "filePath": "scripts/structure_news.py",
+      "contentHash": "003b1618df262359b76eb9bba35f760e7a175c1c3fdcd6e5f162d84baa199515",
+      "functions": [
+        {
+          "name": "normalize_space",
+          "params": [
+            "value"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "contains_any",
+          "params": [
+            "text",
+            "keywords"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "load_raw_news",
+          "params": [
+            "path"
+          ],
+          "returnType": "list[RawNewsItem]",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "is_hn_metadata_summary",
+          "params": [
+            "summary"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "is_effective_summary",
+          "params": [
+            "summary"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "inference_text",
+          "params": [
+            "item"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "infer_data_quality",
+          "params": [
+            "item"
+          ],
+          "returnType": "tuple[str, bool]",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "infer_category",
+          "params": [
+            "item"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "infer_event_type",
+          "params": [
+            "item"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "extract_entities",
+          "params": [
+            "item"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "infer_sentiment",
+          "params": [
+            "item",
+            "event_type"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 32
+        },
+        {
+          "name": "extract_key_facts",
+          "params": [
+            "item",
+            "data_quality"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "build_evidence",
+          "params": [
+            "item"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "infer_impact",
+          "params": [
+            "category",
+            "event_type",
+            "data_quality"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "infer_risk_or_opportunity",
+          "params": [
+            "category",
+            "event_type",
+            "sentiment",
+            "data_quality"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "infer_importance_score",
+          "params": [
+            "item",
+            "category",
+            "event_type",
+            "data_quality"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "structure_item",
+          "params": [
+            "item"
+          ],
+          "returnType": "StructuredNewsItem",
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "validate_structured_item",
+          "params": [
+            "item"
+          ],
+          "returnType": "StructuredNewsItem",
+          "exported": true,
+          "lineCount": 32
+        },
+        {
+          "name": "structure_news",
+          "params": [
+            "items"
+          ],
+          "returnType": "list[StructuredNewsItem]",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "write_structured_news",
+          "params": [
+            "items",
+            "path"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [
+        {
+          "name": "RawNewsItem",
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "url",
+            "source",
+            "published",
+            "summary"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "StructuredNewsItem",
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "url",
+            "source",
+            "published",
+            "category",
+            "entities",
+            "event_type",
+            "importance_score",
+            "sentiment",
+            "key_facts",
+            "impact",
+            "risk_or_opportunity",
+            "evidence",
+            "data_quality",
+            "needs_review"
+          ],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "dataclasses",
+          "specifiers": [
+            "asdict",
+            "dataclass"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        }
+      ],
+      "exports": [
+        "RawNewsItem",
+        "StructuredNewsItem",
+        "normalize_space",
+        "contains_any",
+        "load_raw_news",
+        "is_hn_metadata_summary",
+        "is_effective_summary",
+        "inference_text",
+        "infer_data_quality",
+        "infer_category",
+        "infer_event_type",
+        "extract_entities",
+        "infer_sentiment",
+        "extract_key_facts",
+        "build_evidence",
+        "infer_impact",
+        "infer_risk_or_opportunity",
+        "infer_importance_score",
+        "structure_item",
+        "validate_structured_item",
+        "structure_news",
+        "write_structured_news",
+        "main"
+      ],
+      "totalLines": 429,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/structure-data-plan.md": {
+      "filePath": "scripts/structure-data-plan.md",
+      "contentHash": "1940fe3e53f65c9a5dff368b665e95503dfab443a18a6caac3b98351ad51938a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/structure-process-design.md": {
+      "filePath": "scripts/structure-process-design.md",
+      "contentHash": "592c776dbc195aa888602e824d929d528662ca0f058d632a967fe10ceda60eda",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 342,
+      "hasStructuralAnalysis": true
+    }
+  }
+}
